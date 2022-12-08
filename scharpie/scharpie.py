@@ -3,8 +3,11 @@ import os
 
 class Scharpie:
     def __init__(self) -> None:
-        self.checks = set()
+        self._checks = set()
         self._violations = []
+
+    def add_checker(self, checker):
+        self._checks.add(checker)
 
     def get_violations(self, file_name):
         for checker, violation in self._violations:
@@ -21,7 +24,7 @@ class Scharpie:
         
         tree = ast.parse(source_code)
 
-        for checker in self.checks:
+        for checker in self._checks:
             checker.visit(tree)
             self._violations.extend([(checker, v) for v in checker.violations])
         

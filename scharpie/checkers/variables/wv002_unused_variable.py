@@ -22,7 +22,7 @@ class UnusedVariableInScopeChecker(BaseChecker):
 
 class UnusedVariableChecker(BaseChecker):
     def __init__(self) -> None:
-        super(UnusedVariableChecker, self).__init__(issue_code='W002')
+        super(UnusedVariableChecker, self).__init__(issue_code='WV002')
 
     def check_for_unused_vars(self, node: ast.AST):
         visitor = UnusedVariableInScopeChecker()

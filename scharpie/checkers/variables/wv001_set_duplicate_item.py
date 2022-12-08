@@ -5,10 +5,10 @@ from scharpie.violation import Violation
 
 class SetDuplicateItemChecker(BaseChecker):
     '''
-    W001: Check whether a duplicate item is being used in a set
+    WV001: Check whether a duplicate item is being used in a set
     '''
     def __init__(self) -> None:
-        super(SetDuplicateItemChecker, self).__init__(issue_code='W001')
+        super(SetDuplicateItemChecker, self).__init__(issue_code='WV001')
 
     def visit_Set(self, node: ast.Set):
         seen = set()

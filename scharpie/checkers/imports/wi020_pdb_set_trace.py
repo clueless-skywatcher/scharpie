@@ -5,7 +5,7 @@ from scharpie.violation import Violation
 
 class PdbSetTraceChecker(BaseChecker):
     '''
-    W020: Check whether there is a `pdb.set_trace()` line in the code.
+    WI020: Check whether there is a `pdb.set_trace()` line in the code.
     This line can halt the code in debugging mode.
     '''
     _SET_TRACE_CALL_FUNC = ast.Attribute(
@@ -15,7 +15,7 @@ class PdbSetTraceChecker(BaseChecker):
     )
 
     def __init__(self) -> None:
-        super(PdbSetTraceChecker, self).__init__(issue_code = 'W020')
+        super(PdbSetTraceChecker, self).__init__(issue_code = 'WI020')
 
     def visit_Expr(self, node: ast.Expr):
         if isinstance(node.value, ast.Call):
