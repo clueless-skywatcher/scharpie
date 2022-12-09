@@ -2,13 +2,13 @@ import sys
 from typing import Sequence
 
 from scharpie import Scharpie
-
+from scharpie.checkers.code_styling import (
+    UnreachableCodeChecker
+)
 from scharpie.checkers.imports import (
     MultipleImportsOnOneLineChecker,
     PdbSetTraceChecker
 )
-
-
 from scharpie.checkers.variables import (
     SetDuplicateItemChecker, 
     UnusedVariableChecker
@@ -24,6 +24,7 @@ def cli(argv: Sequence[str] = sys.argv):
         linter.add_checker(UnusedVariableChecker())
         linter.add_checker(PdbSetTraceChecker())
         linter.add_checker(MultipleImportsOnOneLineChecker())
+        linter.add_checker(UnreachableCodeChecker())
 
         linter.run(path)
     

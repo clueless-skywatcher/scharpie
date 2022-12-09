@@ -1,23 +1,9 @@
-import pdb
-pdb.set_trace()
-
-s = {1, 2}
-l = [1, 2, 3, 1, 2, 3]
-
 def main():
+    l = 1
     for item in l:
-        import pdb
-        pdb.set_trace()
-        methods = {
-            "GET",
-            "PUT",
-            "POST",
-            "DELETE",
-            "PUT",   # This is a duplicate
-        }
+        raise Exception
         if item in methods:
             print(item)
 
-    t = 1
-
-s2 = {1, 2, 3, 1}  # Has duplicates
+return
+print(5)
